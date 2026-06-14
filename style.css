@@ -155,17 +155,21 @@ a {
 
 .project-display {
     display: grid;
+    width: 100%;
+    height: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 }
 
 .card-img-container {
+    align-items: end;
     grid-area: 1 / 1;
     display: grid;
     grid-template-columns: 1fr;
 }
 
 .card-img-container img{
+    justify-self: baseline;
     width: 300px;
     grid-area: 1 / 1;
     object-fit: cover;
@@ -212,10 +216,33 @@ a {
 
 
 .project-img {
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
     grid-row: 1;
     grid-column: 1;
     display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
 
+.card.expanded .project-img img {
+    opacity: 1;
+    width: 100px;
+    transition: opacity 0.4s ease-in-out 0.4s;
+    
+}
+
+.project-img img {
+    justify-self: center;
+    align-self: center;
+    opacity: 0;
+    width: 100px;
+    transition: opacity 0.3s ease-in-out;
+    
 }
 
 .scrollable-page {
@@ -225,6 +252,7 @@ a {
 }
 
 .balls-animation{
+    
     width: 100%;
     height: 100%;
     display: grid;
@@ -232,6 +260,7 @@ a {
     grid-template-columns: 100% 1fr; 
     justify-items: center;
     box-sizing: border-box;
+    display: none;
 }
 
 .balls-animation::before,
